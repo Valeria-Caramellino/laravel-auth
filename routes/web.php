@@ -30,6 +30,7 @@ Route::middleware(['auth'])
  		Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 		Route::resource('project',ProjectController::class);
+		
 
 });
 

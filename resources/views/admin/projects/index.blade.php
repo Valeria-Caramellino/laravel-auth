@@ -1,5 +1,17 @@
 @extends('layouts.admin')
 
 @section('content')
-    dati ok
+<div class="container-fluid mt-4">
+    <div class="row justify-content-between">
+        @foreach ($projects as $project)
+            <div class="card p-0 mb-4" style="width: 18rem;">
+                <img class="card-img-top" src="{{ $project->image }}" alt="{{ $project->title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $project->title }}</h5>
+                    <p class="card-text">{{ $project->content }}</p>
+                </div>
+            </div>
+        @endforeach
+    </div>
+</div>
 @endsection
