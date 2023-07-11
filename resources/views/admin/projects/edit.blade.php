@@ -4,7 +4,7 @@
 
 <div class="container-fluid mt-4">
     <div class="row justify-content-between">
-        <h1>Crea un nuovo post</h1>
+        <h1>Modifica campi</h1>
 
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -16,11 +16,13 @@
         </div>
         @endif
 
-        <form action="{{ route("admin.project.store") }}" method="POST" class="needs-validation">
+        <form action="{{ route("admin.project.update", $project) }}" method="post" class="needs-validation">
             @csrf
 
+            @method('PUT')
+
             <label for="title">Titolo</label>
-            <input type="text" name="title" id="title" value="{{ old("title") }}" class="form-control mb-4 @error('title') is-invalid @enderror">
+            <input type="text" name="title" id="title" value="{{ old("title") ?? $project->title }}" required class="form-control mb-4 @error('title') is-invalid @enderror">
             @error("title")
                 <div class="invalid-feedback">{{$message}}</div>
             @enderror
@@ -35,7 +37,7 @@
             @error("image")
                 <div class="invalid-feedback">{{$message}}</div>
             @enderror
-            <input type="submit" class="btn btn-primary form-control mb-4" value="Crea post">
+            <input type="submit" class="btn btn-primary form-control mb-4" value="modifica">
         
         </form>
     </div>

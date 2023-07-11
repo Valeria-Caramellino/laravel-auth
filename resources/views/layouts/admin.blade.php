@@ -43,9 +43,16 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-white"
                                     href="{{ route('admin.project.index') }}">
                                     <i class="fa-solid fa-laptop-code fa-lg fa-fw"></i> Projects
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-white"
+                                    href="{{ route('admin.project.create') }}">
+                                    <i class="fa-solid fa-laptop-code fa-lg fa-fw"></i> Aggiungi prodotto
                                 </a>
                             </li>
 
