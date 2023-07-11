@@ -10,6 +10,12 @@
                     <h5 class="card-title">{{ $project->title }}</h5>
                     <p class="card-text">{{ $project->content }}</p>
                 </div>
+                <div>
+                    <a href="{{ route('admin.project.show', $project) }}">
+                        <button class="btn btn-primary w-100">Show This</button>
+                    </a>  
+                </div>
+                
             </div>
         @endforeach
     </div>
